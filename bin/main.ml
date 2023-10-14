@@ -71,13 +71,13 @@ module Problems99 = struct
   (** Reverse a list.*)
   let rev lst =
     let rec rev_aux acc = function
-      | [] -> []
+      | [] -> acc
       | h :: t -> rev_aux (h :: acc) t 
     in
-    rev_aux [] lst;;
+    rev_aux [] lst
 
   let is_palindrome lst =
-    lst = (rev lst)
+    lst = (List.rev lst)
 
 end
 
